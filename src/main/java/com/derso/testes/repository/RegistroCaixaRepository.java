@@ -12,11 +12,16 @@ import com.derso.testes.domain.RegistroCaixa;
 
 public interface RegistroCaixaRepository extends JpaRepository<RegistroCaixa, Long> {
 	
+	// Não é o jeito mais eficiente de fazer isto porém é apenas para demonstração
+	// da classe de testes
 	@Query(
 		nativeQuery = true,
-		value = "SELECT * FROM registro_caixa WHERE DATE(data_hora) = :data")
-	List<RegistroCaixa> findByDate(@Param("data") LocalDate data);
+		value = "SELECT * FROM registro_caixa WHERE CAST(data_hora AS DATE) = :data")
+	List<RegistroCaixa> buscarPorData(@Param("data") LocalDate data);
 	
+	// O ideal é ter uma classe de negócio/serviço que pega o LocalDate e gera dois
+	// LocalDateTime, com a meia-noite e o último segundo (nanossegundo?) do dia.
+	// Ver RegistroCaixaRepositoryTest
 	List<RegistroCaixa> findByDataHoraBetween(
 			LocalDateTime inicio, LocalDateTime fim);
 
