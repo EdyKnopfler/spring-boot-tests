@@ -87,8 +87,8 @@ public class RegistroCaixaRepositoryTest {
 	public void buscaPorDataEspecifica() {
 		List<RegistroCaixa> registros = repositorio.buscarPorData(sexta);
 		assertEquals(2, registros.size());
-		assertEquals(sexta.atTime(12, 0, 0), registros.get(0).getDataHora());
-		assertEquals(sexta.atTime(13, 0, 0), registros.get(1).getDataHora());
+		assertEquals(sexta12h, registros.get(0).getDataHora());
+		assertEquals(sexta13h, registros.get(1).getDataHora());
 	}
 
 }
