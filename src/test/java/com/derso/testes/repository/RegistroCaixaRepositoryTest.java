@@ -38,6 +38,8 @@ public class RegistroCaixaRepositoryTest {
 	// Este é o cara que usamos para manipular a base de dados:
 	// - montar cenários
 	// - conferir o conteúdo
+	// Exemplos de uso do EntityManager em:
+	// https://github.com/EdyKnopfler/spring-boot-udemy-spring-data-entity-manager
 	@Autowired
     private TestEntityManager entityManager;
 	
