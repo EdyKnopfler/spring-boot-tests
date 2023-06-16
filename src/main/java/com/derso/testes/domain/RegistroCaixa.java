@@ -20,10 +20,11 @@ public class RegistroCaixa {
 	}
 	
 	public RegistroCaixa() {
+		this.dataHora = LocalDateTime.now();
 	}
 	
 	public RegistroCaixa(Tipo tipo, String descricao, BigDecimal valor) {
-		this.dataHora = LocalDateTime.now();
+		this();
 		this.tipo = tipo;
 		this.descricao = descricao;
 		this.valor = valor;
