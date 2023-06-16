@@ -92,7 +92,5 @@ public class RegistroCaixa {
 				? valor
 				: valor.multiply(BigDecimal.valueOf(-1.0));
 	}
-	
-	
 
 }
