@@ -35,7 +35,7 @@ public class CepControllerTest {
 			.andExpect(jsonPath("$.logradouro", equalTo(local.logradouro())))
 			.andExpect(jsonPath("$.bairro", equalTo(local.bairro())))
 			.andExpect(jsonPath("$.localidade", equalTo(local.localidade())));
-		verify(servico).consultar("11111-111");
+		verify(servico).consultar("11111111");
 	}
 
 }

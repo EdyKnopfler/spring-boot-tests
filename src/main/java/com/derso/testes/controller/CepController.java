@@ -22,6 +22,7 @@ public class CepController {
 	
 	@GetMapping("/{cep}")
 	public Localidade consultar(@PathVariable String cep) {
+		cep = cep.replaceAll("\\D+", "");
 		return servico.consultar(cep);
 	}
 
