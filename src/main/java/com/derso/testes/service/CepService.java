@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Service
 public class CepService {
+
+	private RestTemplate rest = new RestTemplate();
 	
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	public record Localidade(
@@ -18,7 +20,6 @@ public class CepService {
 	public Localidade consultar(String cep) {
 		cep = cep.replaceAll("\\D+", "");
 		String uri = "https://viacep.com.br/ws/" + cep + "/json/";
-		RestTemplate rest = new RestTemplate();
 		Localidade localidade = rest.getForObject(uri, Localidade.class);
 		return localidade;
 	}
