@@ -18,6 +18,8 @@ public class CepService {
 	}
 	
 	public Localidade consultar(String cep) {
+		// Um exemplo fora do Spring 
+		// https://www.baeldung.com/java-httpclient-map-json-response
 		cep = cep.replaceAll("\\D+", "");
 		String uri = "https://viacep.com.br/ws/" + cep + "/json/";
 		Localidade localidade = rest.getForObject(uri, Localidade.class);
